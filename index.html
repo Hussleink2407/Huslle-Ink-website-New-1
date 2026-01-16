@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hussle Ink Tattoo Studio | Denver, CO</title>
+  <meta name="description" content="Hussle Ink Tattoo Studio — family-owned tattoo shop in South Denver near Federal & Jewell. Mon–Sat 10am–7pm. Sundays by appointment. Text to book." />
+
+  <style>
+    :root{
+      --bg:#05070a;
+      --panel:#0b1118;
+      --panel2:#0a0f15;
+      --text:#f4f7ff;
+      --muted:#a8b2c2;
+      --line:rgba(255,255,255,.08);
+
+      /* Blue / White / Black / Gray */
+      --blue:#2f6bff;
+      --ice:#9fd6ff;
+      --steel:#97a3b3;
+
+      --radius:18px;
+      --shadow: 0 20px 70px rgba(0,0,0,.55);
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 12% 0%, rgba(47,107,255,.18), transparent 55%),
+        radial-gradient(900px 700px at 88% 10%, rgba(159,214,255,.10), transparent 55%),
+        radial-gradient(900px 600px at 45% 92%, rgba(151,163,179,.08), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.03), transparent 30%),
+        var(--bg);
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px;}
+
+    /* Top bar */
+    .topbar{
+      position:sticky; top:0; z-index:999;
+      backdrop-filter: blur(12px);
+      background: rgba(5,7,10,.62);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .brand{display:flex; align-items:center; gap:12px; min-width:240px;}
+    .mark{
+      width:46px; height:46px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(47,107,255,.35), rgba(159,214,255,.14));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: 0 12px 30px rgba(0,0,0,.45);
+      overflow:hidden;
+      display:grid; place-items:center;
+    }
+    .brandName{
+      font-weight:950;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:13px;
+      line-height:1.1;
+    }
+    .brandSub{font-size:12px;color:var(--muted); margin-top:3px}
+
+    .links{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center;}
+    .link{
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      border-radius:999px;
+      font-weight:800;
+      font-size:13px;
+      color: rgba(244,247,255,.92);
+    }
+    .link:hover{border-color: rgba(47,107,255,.55)}
+    .cta{
+      padding:10px 12px;
+      border-radius:999px;
+      font-weight:950;
+      background: linear-gradient(135deg, var(--blue), var(--ice));
+      color:#06101a;
+      border:0;
+    }
+    .cta:hover{filter:brightness(1.06)}
+
+    /* Hero */
+    .hero{
+      margin-top:18px;
+      border-radius: calc(var(--radius) + 6px);
+      border:1px solid rgba(255,255,255,.08);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      position:relative;
+      background: #000;
+    }
+    .heroBg{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.55) 55%, rgba(0,0,0,.65) 100%),
+        url("shop-front.jpg") center/cover no-repeat;
+      filter: contrast(1.05);
+    }
+    .heroGrid{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.25fr .95fr;
+      gap:16px;
+      padding:26px;
+    }
+    @media (max-width:980px){ .heroGrid{grid-template-columns:1fr;} }
+
+    .heroLeft{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(10,15,21,.78);
+      backdrop-filter: blur(10px);
+      padding:22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .heroLeft::after{
+      content:"";
+      position:absolute; inset:-1px;
+      background: linear-gradient(135deg, rgba(47,107,255,.18), rgba(159,214,255,.06), rgba(151,163,179,.06));
+      opacity:.55;
+      pointer-events:none;
+
+      mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      padding:1px;
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      border-radius: var(--radius);
+    }
+    .heroLeftInner{position:relative; z-index:1;}
+
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.28);
+      color: var(--ice);
+      font-weight:950;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-size:12px;
+    }
+    .title{
+      margin:14px 0 10px;
+      font-size:54px;
+      line-height:1.02;
+      text-transform:uppercase;
+      letter-spacing:-.02em;
+      font-weight:1000;
+    }
+    @media (max-width:560px){ .title{font-size:40px;} }
+
+    .sub{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      max-width:64ch;
+    }
+
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
+    .btn{
+      display:inline-flex; gap:10px; align-items:center; justify-content:center;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      font-weight:950;
+    }
+    .btn:hover{border-color: rgba(47,107,255,.55)}
+    .btnPrimary{
+      border:0;
+      background: linear-gradient(135deg, var(--blue), var(--ice));
+      color:#06101a;
+    }
+
+    .meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;}
+    .chip{
+      padding:9px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.28);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .chip b{color:var(--text)}
+
+    .heroCrest{
+      position:absolute;
+      right:-20px; top:-18px;
+      width:320px;
+      opacity:.16;
+      transform: rotate(6deg);
+      pointer-events:none;
+      filter: contrast(1.1);
+    }
+    @media (max-width:980px){ .heroCrest{display:none;} }
+
+    .heroRight{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(10,15,21,.78);
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+    }
+    .heroRightHead{
+      padding:16px 16px 12px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .miniTitle{
+      font-weight:950; letter-spacing:.16em; text-transform:uppercase;
+      font-size:12px; color:var(--ice);
+    }
+    .miniText{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.45}
+    .heroRightBody{padding:16px}
+    .stack{display:grid; gap:12px;}
+    .box{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      background: rgba(255,255,255,.02);
+      padding:14px;
+    }
+    .box b{color:var(--text)}
+    .box .small{margin-top:6px; color:var(--muted); font-size:13px; line-height:1.5}
+
+    /* Sections */
+    .section{padding:22px 0;}
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      margin:8px 0 14px;
+    }
+    .h2{
+      margin:0;
+      font-size:22px;
+      font-weight:1000;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .note{margin:0; color:var(--muted); font-size:13px}
+
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+    @media (max-width:900px){ .grid2{grid-template-columns:1fr;} }
+
+    .card{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(11,17,24,.92), rgba(10,15,21,.92));
+      box-shadow: var(--shadow);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: linear-gradient(135deg, rgba(47,107,255,.16), rgba(159,214,255,.06), rgba(151,163,179,.06));
+      opacity:.45;
+      pointer-events:none;
+      mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      padding:1px;
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      border-radius: var(--radius);
+    }
+    .cardInner{position:relative; z-index:1;}
+
+    /* Artist cards */
+    .artist{
+      display:flex; gap:14px; align-items:flex-start;
+    }
+    .avatar{
+      width:58px; height:58px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .artistName{margin:0; font-weight:1000; font-size:16px}
+    .artistMeta{margin-top:6px; color:var(--muted); font-size:13px; line-height:1.45}
+    .artistBtns{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:12px;
+    }
+    .photo{
+      grid-column: span 4;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      overflow:hidden;
+      background: rgba(255,255,255,.02);
+      min-height:180px;
+      position:relative;
+    }
+    .photo img{width:100%; height:100%; object-fit:cover}
+    .photo::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.60));
+      pointer-events:none;
+    }
+    .label{
+      position:absolute; left:12px; bottom:10px;
+      font-weight:950; letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:12px;
+      color: rgba(244,247,255,.92);
+      z-index:1;
+    }
+    @media (max-width:900px){ .photo{grid-column:span 6;} }
+    @media (max-width:560px){ .photo{grid-column:span 12;} }
+
+    /* Map */
+    .map{width:100%; height:340px; border:0; border-radius:18px;}
+
+    .footer{
+      padding:26px 0 44px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    /* Quote form (optional; opens email app) */
+    label{display:block;font-size:13px;color:var(--muted);margin:10px 0 6px;}
+    input,textarea,select{
+      width:100%;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus,textarea:focus,select:focus{border-color: rgba(47,107,255,.65)}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:560px){.two{grid-template-columns:1fr;}}
+    .success{
+      display:none;
+      margin-top:10px;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(159,214,255,.35);
+      background: rgba(47,107,255,.09);
+      color: rgba(244,247,255,.95);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="nav">
+      <div class="brand">
+        <div class="mark">
+          <img src="logo-h.png" alt="Hussle Ink logo" />
+        </div>
+        <div>
+          <div class="brandName">Hussle Ink Tattoo Studio</div>
+          <div class="brandSub">2906 W Jewell Ave • Denver • Federal & Jewell</div>
+        </div>
+      </div>
+
+      <div class="links">
+        <a class="link" href="#artists">Artists</a>
+        <a class="link" href="#policies">Deposit</a>
+        <a class="link" href="#gallery">Gallery</a>
+        <a class="link" href="#location">Location</a>
+        <a class="cta" href="#book">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="heroBg"></div>
+
+      <div class="heroGrid">
+        <div class="heroLeft">
+          <img class="heroCrest" src="logo-crest.png" alt="" aria-hidden="true" />
+
+          <div class="heroLeftInner">
+            <div class="kicker">Family-Owned • Clean Work • Great Vibes</div>
+            <div class="title">Hussle Ink</div>
+            <p class="sub">
+              Professional tattoo studio in South Denver specializing in custom work.
+              Walk-ins when available. Appointments recommended.
+            </p>
+
+            <div class="actions" id="book">
+              <a class="btn btnPrimary" href="sms:+17203099071">📲 Text Vic: (720) 309-9071</a>
+              <a class="btn" href="sms:+17209263379">📲 Text August Rose: (720) 926-3379</a>
+              <a class="btn" href="https://www.google.com/maps?q=Hussle+Ink+Tattoo+Studio+2906+W+Jewell+Ave+Denver" target="_blank" rel="noreferrer">📍 Directions</a>
+            </div>
+
+            <div class="meta">
+              <div class="chip"><b>Hours:</b> Mon–Sat 10am–7pm</div>
+              <div class="chip"><b>Sunday:</b> By appointment only</div>
+              <div class="chip"><b>Deposit:</b> $100</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroRight">
+          <div class="heroRightHead">
+            <div>
+              <div class="miniTitle">Studio Info</div>
+              <div class="miniText">
+                Mon–Sat 10:00 AM – 7:00 PM<br/>
+                Sunday: By appointment only
+              </div>
+            </div>
+            <a class="btn btnPrimary" href="#quote">Request Quote</a>
+          </div>
+
+          <div class="heroRightBody">
+            <div class="stack">
+
+              <div class="box" id="policies">
+                <b>$100 Deposit Policy</b>
+                <div class="small">
+                  A <b>$100 non-refundable deposit</b> is required to secure your appointment.
+                  This deposit reserves your time, covers drawing/design prep, and helps reduce last-minute cancellations and no-shows
+                  so we can stay on schedule for every client.
+                </div>
+              </div>
+
+              <div class="box">
+                <b>Fastest booking</b>
+                <div class="small">
+                  Text your idea + placement + size and include reference photos.
+                  <br/><b>Vic:</b> (720) 309-9071
+                  <br/><b>August Rose:</b> (720) 926-3379
+                </div>
+              </div>
+
+              <div class="box">
+                <b>Address</b>
+                <div class="small">
+                  2906 W Jewell Ave, Denver, CO<br/>
+                  Near Federal & Jewell
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ARTISTS -->
+    <section class="section" id="artists">
+      <div class="sectionHead">
+        <h2 class="h2">Artists</h2>
+        <p class="note">Text to book • Clean shop • Professional experience</p>
+      </div>
+
+      <div class="grid2">
+
+        <div class="card">
+          <div class="cardInner artist">
+            <div class="avatar">
+              <img src="logo-h.png" alt="Vic Chavez">
+            </div>
+            <div>
+              <p class="artistName">Vic Chavez</p>
+              <div class="artistMeta">Custom work • Clean lines • Black & grey / color</div>
+              <div class="artistBtns">
+                <a class="btn btnPrimary" href="sms:+17203099071">Text Vic</a>
+                <a class="btn" href="tel:+17203099071">Call Vic</a>
+              </div>
+              <div class="artistMeta"><b>Phone:</b> (720) 309-9071</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardInner artist">
+            <div class="avatar">
+              <img src="logo-h.png" alt="August Rose">
+            </div>
+            <div>
+              <p class="artistName">August Rose</p>
+              <div class="artistMeta">Custom pieces • Fine line • Floral / detailed work</div>
+              <div class="artistBtns">
+                <a class="btn btnPrimary" href="sms:+17209263379">Text August Rose</a>
+                <a class="btn" href="tel:+17209263379">Call August Rose</a>
+              </div>
+              <div class="artistMeta"><b>Phone:</b> (720) 926-3379</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUOTE FORM (optional) -->
+    <section class="section" id="quote">
+      <div class="sectionHead">
+        <h2 class="h2">Request a Quote</h2>
+        <p class="note">This will open your email app to send your request (easy & free — no website backend needed)</p>
+      </div>
+
+      <div class="card">
+        <div class="cardInner">
+          <form id="quoteForm">
+            <div class="two">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" required placeholder="Your name" />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" required placeholder="###-###-####" />
+              </div>
+            </div>
+
+            <div class="two">
+              <div>
+                <label for="artist">Preferred artist</label>
+                <select id="artist" required>
+                  <option value="" selected disabled>Choose one</option>
+                  <option value="Vic">Vic — (720) 309-9071</option>
+                  <option value="August Rose">August Rose — (720) 926-3379</option>
+                  <option value="Either">Either</option>
+                </select>
+              </div>
+              <div>
+                <label for="placement">Placement</label>
+                <input id="placement" required placeholder="Forearm, shoulder, etc." />
+              </div>
+            </div>
+
+            <label for="size">Approx size</label>
+            <input id="size" required placeholder='Example: "3 inches" or "palm size"' />
+
+            <label for="details">Describe your idea</label>
+            <textarea id="details" required placeholder="Style, subject, black & grey or color, any notes..."></textarea>
+
+            <label for="refs">Reference links (optional)</label>
+            <input id="refs" placeholder="Paste IG links / Google image links" />
+
+            <div class="actions" style="margin-top:12px;">
+              <button class="btn btnPrimary" type="submit">Send Request</button>
+              <a class="btn" href="sms:+17203099071">Text Vic</a>
+              <a class="btn" href="sms:+17209263379">Text August</a>
+            </div>
+
+            <div class="success" id="successBox">✅ Your request is ready — your email app will open to send.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+      <div class="sectionHead">
+        <h2 class="h2">Gallery</h2>
+        <p class="note">A clean look that shows your studio and work</p>
+      </div>
+
+      <div class="gallery">
+        <div class="photo"><img src="shop-waiting.jpg" alt="Waiting area"><div class="label">Studio</div></div>
+        <div class="photo"><img src="shop-counter.jpg" alt="Front counter"><div class="label">Front Desk</div></div>
+        <div class="photo"><img src="artist-work.jpg" alt="Artist tattooing"><div class="label">In Progress</div></div>
+        <div class="photo"><img src="shop-front.jpg" alt="Storefront"><div class="label">Location</div></div>
+        <div class="photo"><img src="logo-crest.png" alt="Hussle Ink logo"><div class="label">Brand</div></div>
+        <div class="photo"><img src="logo-h.png" alt="Hussle Ink H logo"><div class="label">H</div></div>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="section" id="location">
+      <div class="sectionHead">
+        <h2 class="h2">Location</h2>
+        <p class="note">2906 W Jewell Ave, Denver • Near Federal & Jewell</p>
+      </div>
+
+      <div class="card">
+        <div class="cardInner">
+          <iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=2906%20W%20Jewell%20Ave%20Denver&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="y"></span> Hussle Ink Tattoo Studio • Mon–Sat 10am–7pm • Sunday by appointment<br/>
+      Vic: (720) 309-9071 • August Rose: (720) 926-3379
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // No-backend quote form: opens the user's email app
+    const BUSINESS_EMAIL = "hussleinktattoo@gmail.com"; // change this to your real shop email if you want
+
+    document.getElementById("quoteForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const artist = document.getElementById("artist").value;
+      const placement = document.getElementById("placement").value.trim();
+      const size = document.getElementById("size").value.trim();
+      const details = document.getElementById("details").value.trim();
+      const refs = document.getElementById("refs").value.trim();
+
+      const subject = encodeURIComponent("Hussle Ink — Quote Request");
+      const body = encodeURIComponent(
+        `Name: ${name}\nPhone: ${phone}\nPreferred Artist: ${artist}\nPlacement: ${placement}\nSize: ${size}\n\nIdea:\n${details}\n\nReference links:\n${refs}\n\nDeposit Policy: $100 non-refundable deposit required to reserve the appointment and cover design prep.`
+      );
+
+      document.getElementById("successBox").style.display = "block";
+      window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body}`;
+    });
+  </script>
+
+</body>
+</html>
